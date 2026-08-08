@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-DATA_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'emi_prediction_dataset.csv'))
+DATA_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Data', 'emi_prediction_dataset.csv'))
 
 st.title("📊 Data Insights")
 st.markdown("Exploratory analysis of the EMIPredict AI dataset (400K+ financial records).")
