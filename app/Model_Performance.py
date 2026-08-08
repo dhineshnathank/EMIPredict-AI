@@ -6,12 +6,14 @@ import os
 sys.path.insert(0, os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..')))
 
+# Build the mlruns path relative to this file's location, works on any OS
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+MLRUNS_DB_PATH = os.path.join(PROJECT_ROOT, "mlruns", "mlflow.db")
 
 st.title("📈 Model Performance")
 st.markdown("MLflow experiment tracking results for all trained models.")
 
-mlflow.set_tracking_uri(
-    "sqlite:///D:/Code/Project/EMIPredict-AI/mlruns/mlflow.db")
+mlflow.set_tracking_uri(f"sqlite:///{MLRUNS_DB_PATH}")
 client = mlflow.tracking.MlflowClient()
 
 EXPERIMENT_NAME = "EMIPredict_Classification_final"
